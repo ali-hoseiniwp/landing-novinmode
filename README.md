@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+﻿# Novin Mode social storefront
 
-## Getting Started
+A Persian RTL landing page built with Next.js App Router and React Server Components. Social links, store contact details, and local fonts/images render statically. There are no application API endpoints, forms, authentication, database access, or Server Actions.
 
-First, run the development server:
+## Development
 
-```bash
+Use Node.js 20.9 or newer (validated with Node.js 24.18.0).
+
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Production verification
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```sh
+npm audit
+npm run build
+npm run start -- --port 3101
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+In another terminal:
 
-## Learn More
+```sh
+npm run check:release
+```
 
-To learn more about Next.js, take a look at the following resources:
+An alternative server URL can be supplied with `npm run check:release -- http://localhost:3000`.
+The release check validates the homepage, security response headers, external-link protections, the selected app download and copyright destinations, local assets and font signatures, and private-file/unknown-route 404 responses.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Deploy using the production Next.js server (`npm start`), not the development server. Security headers are defined in `next.config.mjs`; a reverse proxy must preserve them. If deployed through a static-file host instead, configure equivalent headers at that host. Font files are local; Vazirmatn's license is included under `public/fonts`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See `REVIEW.md` for the security/performance review and its verification limits.

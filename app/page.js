@@ -4,11 +4,9 @@ import Copywrite from "./components/Copywrite";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col gap-6 justify-start bg-[#e0e0e0] font-sans">
+    <div className="storefront">
       <Banner />
-      <div className="px-5 md:px-20">
-        <ContentBox />
-      </div>
+      <ContentBox />
       <Copywrite />
     </div>
   );

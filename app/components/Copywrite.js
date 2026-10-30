@@ -1,12 +1,5 @@
-import React from 'react';
-
-const Copywrite = () => {
-    return (
-        <div className='mx-auto mb-16'>
-            <p className='dana'>توسعه داده شده توسط <a target='_blanck' href='https://ir.linkedin.com/in/ali-hoseiniwp
-' className='text-emerald-500 border-b cursor-pointer'>علی حسینی</a></p>
-        </div>
-    );
+export default function Copywrite() {
+  return (
+    <footer className="site-footer"><span aria-hidden="true" /><p>توسعه داده شده توسط <a href="https://tarhiva.com/services/web-design" target="_blank" rel="noopener noreferrer">طرحیوا</a></p><span aria-hidden="true" /></footer>
+  );
 }
-
-export default Copywrite;

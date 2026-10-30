@@ -1,58 +1,51 @@
-import React from 'react';
-import { FaGlobe } from "react-icons/fa6";
-import { FaDownload } from "react-icons/fa6";
-import { FaPhone } from "react-icons/fa6";
+import { FaGlobe, FaDownload, FaPhone, FaLocationDot } from 'react-icons/fa6';
+import { FiChevronLeft, FiClock, FiArrowUpLeft } from 'react-icons/fi';
 
-const ContentBox = () => {
-    return (
-        <div className='max-w-200 w-full mt-16 mx-auto neu rounded-[20px] p-5 '>
-            <h2 className='text-lg font-bold text-justify mb-10 text-sky-950 dark:text-sky-100 dana'>برای اطلاع از جدیدترین محصولات در شبکه‌های اجتماعی ما عضو شوید 👇✨</h2>
-            <div className='grid grid-cols-1 sm:grid-cols-2 gap-5'>
-                <a target='_blanck' href='https://t.me/novinmode_shop' className=' dark:text-sky-100 dana text-slate-900 neu py-3 px-2 rounded-2xl yekan flex justify-center items-center gap-1 sm:gap-2  max-xxs:gap-2 transition-all active:neu-pressed'>
-                    کانال تلگرام
-                    <img
-                        className='w-6 h-6'
-                        src='/telegram.svg'
-                    />
-                </a>
-                <a target='_blanck' href='https://eitaa.com/novinmode_shop' className=' dark:text-sky-100 dana text-slate-900 neu py-3 px-2 rounded-2xl yekan flex justify-center items-center gap-1 sm:gap-2  max-xxs:gap-2 transition-all active:neu-pressed'>
-                    کانال ایتا
-                    <img
-                        className='w-6 h-6'
-                        src='/eitaa.png'
-                    />
-                </a>
-                <a target='_blanck' href='https://novinmode.shop' className=' dark:text-sky-100 dana text-slate-900 neu py-3 px-2 rounded-2xl yekan flex justify-center items-center gap-1 sm:gap-2  max-xxs:gap-2 transition-all active:neu-pressed'>
-                    وبسایت فروشگاه
-                    <FaGlobe size={24} className='text-blue-500' />
-                </a>
-                <a target='_blanck' href='https://novinmode.shop' className=' dark:text-sky-100 dana text-slate-900 neu py-3 px-2 rounded-2xl yekan flex justify-center items-center gap-1 sm:gap-2  max-xxs:gap-2 transition-all active:neu-pressed'>
-                    دانلود اپ فروشگاه
-                    <FaDownload size={24} className='text-emerald-500' />
-                </a>
-            </div>
-            <div className='mt-8 flex flex-col items-center w-full gap-5'>
-                <a target='_blanck' href='https://basalam.com/novinmodewear' className='neu  w-full dark:text-sky-100 dana py-3 px-6 rounded-2xl yekan flex items-center max-xxs:flex-col justify-center gap-3 transition-all active:neu-pressed'>
-                    غرفه باسلام
-                    <img
-                        className='w-6 h-6'
-                        src='/baslam.ico'
-                    />
-                </a>
-                <a href='tel:09153042198' className='neu  w-full dark:text-sky-100 dana py-3 px-6 rounded-2xl yekan flex items-center max-[400px]:flex-col justify-center gap-3 transition-all active:neu-pressed'>
-                    <span className='font-semibold text-lg text-sky-950 text-right'>
-                        شماره تماس:
-                    </span>
-                    <span className='flex gap-2 items-center text-xl!'>
-                        09153042198
-                        <FaPhone size={24} className='text-rose-600'/>
-                    </span>
-                    
-                </a>
-            </div>
-            <div dir="rtl" className="w-full pb-4 mt-6 pt-1 text-center dana text-xl"><h3 className="font-semibold mb-2 text-sky-950">زمان پاسخگویی:</h3><p className="">همه روزه از ساعت 9 الی 18</p></div>
+const links = [
+  { title: 'صفحه اینستاگرام', href: 'https://www.instagram.com/novinmod.hoseini?utm_source=qr&rpxt=MW05cTJhemdwd29xcg==', image: '/instagram.png', style: 'instagram' },
+  { title: 'کانال روبیکا', href: 'https://rubika.ir/novinmode_shop', image: '/rubika.png' },
+  { title: 'کانال تلگرام', href: 'https://t.me/novinmode_shop', image: '/telegram.svg' },
+  { title: 'کانال ایتا', href: 'https://eitaa.com/novinmode_shop', image: '/eitaa.png' },
+  { title: 'وبسایت فروشگاه', href: 'https://novinmode.shop', Icon: FaGlobe, style: 'website' },
+  { title: 'دانلود اپ فروشگاه', href: 'http://cafebazaar.ir/app/?id=app.shop.novinmod&ref=share', Icon: FaDownload, style: 'download' },
+  { title: 'غرفه باسلام', href: 'https://basalam.com/novinmodewear', image: '/baslam.ico', style: 'basalam' },
+];
+
+export default function ContentBox() {
+  return (
+    <main className="content-panel">
+      <section className="social-section" aria-labelledby="social-title">
+        <div className="social-heading">
+          <span className="section-ornament" aria-hidden="true">✦</span>
+          <p className="section-eyebrow">همیشه همراه نوین مد</p>
+          <h2 id="social-title">یک قدم نزدیک‌تر به <span>استایل شما</span></h2>
+          <p className="section-description">برای اطلاع از جدیدترین محصولات، در شبکه‌های اجتماعی ما عضو شوید.</p>
         </div>
-    );
+        <nav className="social-grid" aria-label="فروشگاه و شبکه‌های اجتماعی نوین مد">
+          {links.map(({ title, href, image, Icon, style = '' }, index) => (
+            <a key={title} className={`social-link ${style}`} style={{ '--link-index': index }} href={href} target="_blank" rel="noopener noreferrer">
+              <span className="social-icon" aria-hidden="true">{image ? <img src={image} alt="" width={32} height={32} /> : <Icon />}</span>
+              <span className="social-label">{title}</span>
+              <span className="link-arrow-wrap" aria-hidden="true"><FiArrowUpLeft className="link-arrow" /></span>
+            </a>
+          ))}
+        </nav>
+      </section>
+      <section className="contact-strip" aria-label="تماس و ساعات پاسخگویی">
+        <div className="hours contact-item">
+          <div><h2>زمان پاسخگویی:</h2><p>همه روزه از ساعت ۹ الی ۱۸</p></div>
+          <FiClock className="contact-icon clock-icon" aria-hidden="true" />
+        </div>
+        <a className="phone contact-item" href="tel:09153042198">
+          <div><h2>شماره تماس:</h2><p dir="ltr">09153042198</p></div>
+          <FaPhone className="contact-icon phone-icon" aria-hidden="true" />
+        </a>
+      </section>
+      <a className="address-card" href="https://www.google.com/maps/search/?api=1&query=مشهد%20بلوار%20مفتح%20پارک%20بازار%20بازار%20فردوسی" target="_blank" rel="noopener noreferrer" aria-label="جستجوی آدرس فروشگاه در نقشه">
+        <FaLocationDot className="address-pin" aria-hidden="true" />
+        <div><h2>در فروشگاه منتظرتان هستیم</h2><address>مشهد، بلوار مفتح، پارک بازار، روبروی بازار فردوسی، طبقه <bdi>C</bdi>، اولین مغازه سمت چپ، فروشگاه نوین‌مد</address><span className="address-action">مشاهده آدرس روی نقشه <FiArrowUpLeft aria-hidden="true" /></span></div>
+        <FiChevronLeft className="address-arrow" aria-hidden="true" />
+      </a>
+    </main>
+  );
 }
-
-export default ContentBox;

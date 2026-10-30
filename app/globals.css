@@ -1,71 +1,78 @@
 @import "tailwindcss";
+@import "./content-panel.css";
 
-@font-face {
-  font-family: "Cinema";
-  src: url("/fonts/Cinema Font.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+@font-face { font-family: Dana; src: url('/fonts/Dana-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: Yekan; src: url('/fonts/Yekan.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+:root { color-scheme: light; --ink: #081d37; --green: #003e35; --gold: #e9ba75; --cream: #f7f0e6; }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 0; color: var(--ink); background: #e9e3d9; font-family: Yekan, Tahoma, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
+button, a { touch-action: manipulation; }
+a:focus-visible { outline: 3px solid #b47b30; outline-offset: 5px; }
+.storefront { position: relative; isolation: isolate; width: 100%; margin: 0; overflow: hidden; background-color: #eee5d7; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23bda681' opacity='.14' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E"); }
+.hero { position: relative; height: 610px; color: #fffdf6; background: #003c33; }
+.hero-backdrop { position: absolute; inset: 0; background: linear-gradient(90deg, #00342c33 0%, transparent 60%), url('/images/boutique-backdrop.webp') center / cover; }
+.hero-backdrop::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 65%, #002e2780); }
+.hero-model { position: absolute; right: 1%; top: 12px; height: 94%; width: 49%; object-fit: contain; object-position: bottom; filter: drop-shadow(-12px 12px 14px #00191350); }
+.hero-copy { position: absolute; left: 7%; top: 52px; width: 53%; text-align: center; z-index: 1; }
+.hero-eyebrow { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 0 0 20px; color: #edc889; font-size: 19px; }
+.hero-eyebrow span { height: 1px; width: 40px; background: linear-gradient(90deg, #d6a55a, #d6a55a20); }
+.hero-eyebrow span:last-child { transform: rotate(180deg); }
+.hero h1 { margin: 0; font-family: Dana, Tahoma, sans-serif; font-size: clamp(32px, 4.4vw, 45px); font-weight: 700; line-height: 1.55; text-shadow: 0 2px 10px #001e2760; }
+.hero h1 em { color: #f2bf79; font-style: normal; }
+.heading-rule { display: block; width: 45px; height: 2px; margin: 13px auto 14px; background: #edbb73; }
+.hero-story { max-width: 410px; margin: 0 auto; font-size: 19px; line-height: 1.85; text-wrap: pretty; }
+.hero-signature { position: absolute; z-index: 3; left: 43%; bottom: 90px; margin: 0; color: #dba74f; font-family: 'Brush Script MT', cursive; font-style: italic; font-size: 33px; line-height: .9; transform: rotate(-17deg); font-weight: 400; }
+.hero-signature span { display: block; padding-left: 20px; }
+.hero-wave { position: absolute; bottom: -1px; left: 0; width: 100%; height: 230px; z-index: 2; }
+.brand-medallion { position: absolute; z-index: 5; width: 210px; height: 210px; bottom: -70px; left: 18%; border-radius: 50%; border: 4px solid #d0a05a; outline: 1px solid #fbe9c4; outline-offset: 3px; background: #fffdf8; overflow: hidden; box-shadow: 0 6px 12px #30241448, inset 0 0 0 5px #fff; }
+.brand-medallion img { position: absolute; width: 165%; height: 165%; max-width: none; left: -32.5%; top: -32.5%; object-fit: contain; }
+.site-footer { display: flex; justify-content: center; align-items: center; gap: 25px; padding: 15px 12px 22px; font-size: 13px; }
+.site-footer p { margin: 0; }
+.site-footer > span { width: 65px; height: 1px; background: #ba8845; }
+.site-footer a { color: #00805b; text-underline-offset: 4px; text-decoration: underline; }
+
+@media (min-width: 1100px) {
+  .storefront::after { content: ''; position: absolute; z-index: -1; width: 230px; height: 170px; bottom: -95px; left: -90px; transform: rotate(35deg); border-top: 2px solid #ccaa68; background: #003d33; box-shadow: 0 -8px 35px #003e3540; }
 }
+@media (max-width: 850px) {
 
-@font-face {
-  font-family: "yekan";
-  src: url("/fonts/Yekan.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+  .hero { height: 580px; }
+  .hero-copy { left: 4%; top: 45px; width: 56%; }
+  .hero h1 { font-size: 35px; }
+  .hero-story { max-width: 330px; font-size: 18px; line-height: 1.8; }
+  .hero-model { width: 51%; right: -3%; height: 89%; }
+  .hero-eyebrow { font-size: 17px; gap: 9px; margin-bottom: 16px; }
+  .hero-eyebrow span { width: 25px; }
+  .brand-medallion { width: 170px; height: 170px; left: calc(50% - 85px); bottom: -68px; }
+  .hero-wave { height: 225px; }
+  .hero-signature { display: none; }
 }
+@media (max-width: 600px) {
 
-@font-face {
-  font-family: "dana";
-  src: url("/fonts/Dana-bold.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+  .hero { height: 490px; }
+  .hero-backdrop { background-position: left center; background-size: auto 110%; }
+  .hero-backdrop::after { background: linear-gradient(120deg, #002c2622, #002c2655); }
+  .hero-model { display: none; }
+  .hero-copy { top: 32px; left: 8%; width: 84%; }
+  .hero-eyebrow { font-size: 16px; margin-bottom: 15px; }
+  .hero-eyebrow span { display: none; }
+  .hero h1 { max-width: 320px; margin: auto; font-size: 30px; line-height: 1.45; }
+  .hero h1 br { display: none; }
+  .hero h1 em { display: block; }
+  .heading-rule { width: 32px; margin: 11px auto; }
+  .hero-story { max-width: 320px; font-size: 17px; line-height: 1.85; }
+  .hero-wave { height: 150px; }
+  .brand-medallion { width: 148px; height: 148px; left: calc(50% - 74px); bottom: -64px; border-width: 3px; }
+  .site-footer { gap: 12px; font-size: 11px; padding: 17px 8px 21px; }
+  .site-footer > span { width: 29px; }
 }
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@media (max-width: 360px) {
+  .hero { height: 478px; }
+  .hero-copy { left: 7%; width: 86%; top: 28px; }
+  .hero h1 { font-size: 27px; }
+  .hero-story { font-size: 16px; }
+  .hero-eyebrow { font-size: 14px; }
+  .brand-medallion { width: 132px; height: 132px; left: calc(50% - 66px); bottom: -56px; }
 }
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-
-@theme {
-  --font-cinema: "Cinema", sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.yekan{
-  font-family: "yekan";
-}
-
-.cinema{
-   font-family: "Cinema";
-}
-
-.dana{
-    font-family: "dana";
-}
-
-.neu {
-    box-shadow: 4px 4px 8px #c9c9c9, -4px -4px 8px #f5f5f5;
-}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
