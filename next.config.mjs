@@ -14,6 +14,12 @@ const nextConfig = {
           { key: 'Content-Security-Policy', value: "base-uri 'self'; object-src 'none'; frame-ancestors 'self'" },
         ],
       },
+      {
+        source: '/images/boutique-backdrop.507d54cc06df.webp',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
     ];
   },
 };

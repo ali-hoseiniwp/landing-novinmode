@@ -12,7 +12,7 @@ export default function Banner() {
       <p className="hero-signature" aria-hidden="true">Novin<br /><span>Mode</span></p>
       <svg className="hero-wave" viewBox="0 0 1000 240" preserveAspectRatio="none" aria-hidden="true">
         <defs>
-          <pattern id="fabric" patternUnits="userSpaceOnUse" width="1000" height="700"><image href="/images/boutique-backdrop.webp" width="1500" height="1000" /></pattern>
+          <pattern id="fabric" patternUnits="userSpaceOnUse" width="1000" height="700"><image href="/images/boutique-backdrop.507d54cc06df.webp" width="1500" height="1000" /></pattern>
           <linearGradient id="wave-shade" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#004b40" stopOpacity=".15" /><stop offset="1" stopColor="#001f1b" stopOpacity=".8" /></linearGradient>
           <linearGradient id="gold-trim"><stop stopColor="#b77b32" /><stop offset=".45" stopColor="#ffe1a1" /><stop offset="1" stopColor="#c28b46" /></linearGradient>
         </defs>

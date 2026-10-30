@@ -95,7 +95,7 @@
 .phone-icon { color: #b75f51; transform: rotate(-12deg); transition: transform .35s; }
 .phone p { font-size: 20px; font-weight: 700; letter-spacing: .5px; }
 
-.address-card { position: relative; display: flex; align-items: center; gap: 24px; margin-top: 16px; padding: 24px; border: 1px solid #315d4f; border-radius: 21px; color: #f8f5ec; background: radial-gradient(ellipse at 90% 0, #28654c70, transparent 65%), linear-gradient(115deg, #002e27ee, #0b4438f5), url('/images/boutique-backdrop.webp') left center / cover; box-shadow: 0 10px 24px -12px #00382e75, inset 0 1px #ffffff15; transition: transform .35s, box-shadow .35s; }
+.address-card { position: relative; display: flex; align-items: center; gap: 24px; margin-top: 16px; padding: 24px; border: 1px solid #315d4f; border-radius: 21px; color: #f8f5ec; background: radial-gradient(ellipse at 90% 0, #28654c70, transparent 65%), linear-gradient(115deg, #002e27ee, #0b4438f5), url('/images/boutique-backdrop.507d54cc06df.webp') left center / cover; box-shadow: 0 10px 24px -12px #00382e75, inset 0 1px #ffffff15; transition: transform .35s, box-shadow .35s; }
 .address-card > div { flex: 1; min-width: 0; }
 .address-card h2 { margin: 0 0 8px; color: #e8c68c; font-size: 17px; font-weight: 600; }
 .address-card address { font-style: normal; font-size: 13px; line-height: 2.2; color: #e5eae2; }
