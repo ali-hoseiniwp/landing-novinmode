@@ -1,14 +1,19 @@
 import { FaGlobe, FaDownload, FaPhone, FaLocationDot } from 'react-icons/fa6';
 import { FiChevronLeft, FiClock, FiArrowUpLeft } from 'react-icons/fi';
+import Image from 'next/image';
+import instagramIcon from '../assets/instagram.webp';
+import rubikaIcon from '../assets/rubika.webp';
+import eitaaIcon from '../assets/eitaa.webp';
+import basalamIcon from '../assets/basalam.webp';
 
 const links = [
-  { title: 'صفحه اینستاگرام', href: 'https://www.instagram.com/novinmod.hoseini?utm_source=qr&rpxt=MW05cTJhemdwd29xcg==', image: '/instagram.png', style: 'instagram' },
-  { title: 'کانال روبیکا', href: 'https://rubika.ir/novinmode_shop', image: '/rubika.png' },
+  { title: 'صفحه اینستاگرام', href: 'https://www.instagram.com/novinmod.hoseini?utm_source=qr&rpxt=MW05cTJhemdwd29xcg==', image: instagramIcon, style: 'instagram' },
+  { title: 'کانال روبیکا', href: 'https://rubika.ir/novinmode_shop', image: rubikaIcon },
   { title: 'کانال تلگرام', href: 'https://t.me/novinmode_shop', image: '/telegram.svg' },
-  { title: 'کانال ایتا', href: 'https://eitaa.com/novinmode_shop', image: '/eitaa.png' },
+  { title: 'کانال ایتا', href: 'https://eitaa.com/novinmode_shop', image: eitaaIcon },
   { title: 'وبسایت فروشگاه', href: 'https://novinmode.shop', Icon: FaGlobe, style: 'website' },
   { title: 'دانلود اپ فروشگاه', href: 'http://cafebazaar.ir/app/?id=app.shop.novinmod&ref=share', Icon: FaDownload, style: 'download' },
-  { title: 'غرفه باسلام', href: 'https://basalam.com/novinmodewear', image: '/baslam.ico', style: 'basalam' },
+  { title: 'غرفه باسلام', href: 'https://basalam.com/novinmodewear', image: basalamIcon, style: 'basalam' },
 ];
 
 export default function ContentBox() {
@@ -24,7 +29,7 @@ export default function ContentBox() {
         <nav className="social-grid" aria-label="فروشگاه و شبکه‌های اجتماعی نوین مد">
           {links.map(({ title, href, image, Icon, style = '' }, index) => (
             <a key={title} className={`social-link ${style}`} style={{ '--link-index': index }} href={href} target="_blank" rel="noopener noreferrer">
-              <span className="social-icon" aria-hidden="true">{image ? <img src={image} alt="" width={32} height={32} /> : <Icon />}</span>
+              <span className="social-icon" aria-hidden="true">{image ? <Image src={image} alt="" width={28} height={28} unoptimized decoding="async" /> : <Icon />}</span>
               <span className="social-label">{title}</span>
               <span className="link-arrow-wrap" aria-hidden="true"><FiArrowUpLeft className="link-arrow" /></span>
             </a>
