@@ -41,7 +41,7 @@ export default function ContentBox() {
           <div><h2>زمان پاسخگویی:</h2><p>همه روزه از ساعت ۹ الی ۱۸</p></div>
           <FiClock className="contact-icon clock-icon" aria-hidden="true" />
         </div>
-        <a className="phone contact-item" href="tel:09153042198">
+        <a className="phone contact-item" href="tel:09155700956">
           <div><h2>شماره تماس:</h2><p dir="ltr">09153042198</p></div>
           <FaPhone className="contact-icon phone-icon" aria-hidden="true" />
         </a>
