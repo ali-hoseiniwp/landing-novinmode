@@ -42,7 +42,7 @@ export default function ContentBox() {
           <FiClock className="contact-icon clock-icon" aria-hidden="true" />
         </div>
         <a className="phone contact-item" href="tel:09155700956">
-          <div><h2>شماره تماس:</h2><p dir="ltr">09153042198</p></div>
+          <div><h2>شماره تماس:</h2><p dir="ltr">09155700956</p></div>
           <FaPhone className="contact-icon phone-icon" aria-hidden="true" />
         </a>
       </section>
